@@ -2,6 +2,7 @@ const prompt= require("prompt-sync")();
 console.log("-".repeat(30) + "A degolificada aparece imperando terror em seu coração" + "-".repeat(30)); 
 let vida_jogador = 15
 let vida_boss = 45
+const ca_jogador = 18
 const ca_boss = 15
 
 //combate
@@ -21,9 +22,16 @@ if (escolha == 1) {
     } else {
         console.log("Você errou o ataque");
         console.log (" ela vai te atacar");
-        const dano = Math.floor(Math.random()*6+1)
-        vida_jogador -= dano
-        console.log("Vida do jogador: " + vida_jogador);
+        const dado = Math.floor(Math.random()*20+1)
+            if (dado >= ca_jogador) {
+            const dano = Math.floor(Math.random()*6+1)
+            vida_jogador -= dano
+            console.log("A degolificada acertou o ataque");
+            console.log("Vida do jogador: " + vida_jogador)
+        }else{
+            console.log("a degolificada errou o ataque");
+        }
+        ;
     }
 }else if (escolha == 2) {
     console.log("Você fugiu");
