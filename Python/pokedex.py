@@ -1,4 +1,4 @@
-import requests
+import requestscle
 
 def buscar_pokemon(nome):
     url = f"https://pokeapi.co/api/v2/pokemon/{nome.lower()}"
