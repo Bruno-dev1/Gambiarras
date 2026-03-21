@@ -1,2 +1,2 @@
 # Gambiarras
-Pastes for testes than I wanted create
+Pastes for testes that I wanted create
