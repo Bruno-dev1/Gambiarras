@@ -16,6 +16,7 @@ const termos = [
 const palavra = termos[Math.floor(Math.random() * termos.length)]
 
 let ganhador = false
+let dica = ""
 
 while (!ganhador)
 {
@@ -33,26 +34,20 @@ while (!ganhador)
     }
     else
     {
-        let dica = ""
+        
 
         for (let i = 0; i < palavra.length; i++)
         {
-            if (resp[i] === palavra[i])
+            if(palavra.includes(resp[i]))
             {
-                dica += resp[i] + " "   // certo no lugar
+                if(dica.includes(resp[i])==false){
+                    dica+=resp[i]
+                }
             }
-            else if (palavra.includes(resp[i]))
-            {
-                dica += resp[i].toUpperCase()           // existe mas posição errada
-            }
-            else
-            {
-                dica += "_ "           // não existe
-            }
-        }
 
-        console.log("Dica:", dica)
-    }
+        
+    }}
+    console.log("Dica:", dica)
 }
 
 console.log("vc ganhou 🎉")
